@@ -9,7 +9,8 @@
         body {
             margin: 0;
             padding: 0;
-            font-family: sans-serif; /* 버튼 폰트를 위해 추가 */
+            /* 하단 고정 버튼을 위한 공간 확보 */
+            padding-bottom: 100px; 
         }
         img {
             display: block;
@@ -18,25 +19,32 @@
             margin: 0 auto;
         }
 
-        /* '상담 바로가기' 버튼 스타일 */
-        .cta-button-container {
-            text-align: center; /* 버튼을 가운데 정렬 */
-            padding: 30px 20px; /* 버튼 위아래 여백 */
-            background-color: #f3f3f3; /* 하단 배경색 */
+        /* '상담 바로가기' 버튼을 담는 하단 고정 컨테이너 */
+        .cta-container-sticky {
+            position: fixed; /* 스크롤을 따라다니도록 화면에 고정 */
+            bottom: 0;       /* 화면 맨 아래에 위치 */
+            left: 0;
+            width: 100%;
+            padding: 15px 0; /* 버튼의 위아래 여백 */
+            background-color: white; /* 컨테이너 배경은 깔끔하게 흰색으로 */
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1); /* 상단에 부드러운 그림자 효과 */
+            text-align: center; /* 버튼을 가운데로 정렬 */
+            z-index: 1000; /* 다른 이미지들보다 항상 위에 있도록 설정 */
         }
+
+        /* '상담 바로가기' 버튼 자체의 스타일 */
         .cta-button {
-            display: inline-block;
-            background-color: #007bff; /* 버튼 배경색 */
-            color: white; /* 글자색 */
-            padding: 15px 30px; /* 버튼 크기 (상하, 좌우) */
+            background-color: #a22135; /* 요청하신 배경색 */
+            color: white; /* 글자색은 흰색 */
+            padding: 15px 35px; /* 버튼 크기 (상하, 좌우) */
             font-size: 18px; /* 글자 크기 */
-            font-weight: bold; /* 글자 굵기 */
-            text-decoration: none; /* 밑줄 제거 */
-            border-radius: 8px; /* 버튼 모서리 둥글게 */
-            transition: background-color 0.3s; /* 마우스 올렸을 때 색상 변경 효과 */
+            font-weight: bold; /* 굵은 글씨체 */
+            text-decoration: none; /* 링크 밑줄 제거 */
+            border-radius: 30px; /* 버튼 모서리를 둥글게 */
+            transition: background-color 0.3s ease; /* 색상 변경 시 부드러운 효과 */
         }
         .cta-button:hover {
-            background-color: #0056b3; /* 마우스 올렸을 때 버튼 색 */
+            background-color: #831a2a; /* 마우스를 올렸을 때 살짝 더 진한색으로 변경 */
         }
     </style>
 </head>
@@ -53,9 +61,9 @@
     <img src="3TRS_web_2025071108.jpg" alt="랜딩페이지 이미지 8">
     <img src="3TRS_web_2025071109.jpg" alt="랜딩페이지 이미지 9">
 
-    <!-- 맨 하단에 추가된 '상담 바로가기' 버튼 -->
-    <div class="cta-button-container">
-        <a href="여기에_상담_링크를_넣어주세요" class="cta-button">상담 바로가기</a>
+    <!-- 화면 하단에 고정된 '상담 바로가기' 버튼 -->
+    <div class="cta-container-sticky">
+        <a href="http://pf.kakao.com/_eTyqn/chat" target="_blank" class="cta-button">상담 바로가기</a>
     </div>
 
 </body>
